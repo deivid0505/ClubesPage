@@ -1,42 +1,165 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Estructura principal */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: contents;
+}
+
+.app-container {
+  max-width: 1100px;
+  height: 100vh;          /* Para que ocupe toda la altura de la ventana */
+  margin: 0 auto;         /* Centrado horizontal */
+  display: flex;
+  justify-content: center; /* Centrado horizontal de hijos */
+  align-items: center;     /* Centrado vertical de hijos */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Encabezado de pasos */
+.pasos-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+.paso-item {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  color: #999;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s, border 0.3s;
+}
+
+.paso-item.activo {
+  color: #f60;
+  font-weight: bold;
+  border-bottom: 2px solid #f60;
+}
+
+/* Contenedor del contenido de cada paso */
+.paso-contenido {
+  width: 100%;
+  padding: 1.5rem;
+}
+.Title-contenido{
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Contenedor genérico de secciones */
+.section-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Título de la sección */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Grid de campos */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Grupo de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border 0.2s, background 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007acc;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Grupo de checkbox */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Botones de navegación */
+.navegacion-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.boton {
+  flex: 1 1 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #f60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+}
+
+.boton:hover {
+  background-color: rgb(196, 78, 0);
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .pasos-header {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .paso-item {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .navegacion-botones {
+    flex-direction: column;
+    align-items: center;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .boton {
+    width: 100%;
+  }
 }
