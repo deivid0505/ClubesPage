@@ -1,0 +1,65 @@
+.club-info-container {
+    background-color: #fff9;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px #00000026;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 1000px;
+    border: 1px solid rgba(255, 255, 255, .4);
+}
+
+.club-info-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333333;
+    font-weight: bold;
+}
+
+.logo-protagonistas {
+    width: 180px;
+    height: auto;
+}
+
+.club-info-header {
+    flex-direction: column-reverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.club-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007acc;
+    outline: none;
+    background-color: #fff;
+}
